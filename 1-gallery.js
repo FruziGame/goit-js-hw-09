@@ -7,4 +7,4 @@ import"./assets/modulepreload-polyfill-B5Qt9EMX.js";/* empty css                
 			/>
 	</a>
 </li>`).join("");t.insertAdjacentHTML("afterbegin",o);new a(".gallery-item a",{captionsData:"alt"});const e=document.querySelectorAll(".gallery-image");e.forEach(p=>{p.style.maxWidth="360px",p.style.height="200px"});
-//# sourceMappingURL=1-galerry.js.map
+//# sourceMappingURL=1-gallery.js.map
