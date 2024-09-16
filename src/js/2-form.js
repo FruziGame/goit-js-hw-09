@@ -16,7 +16,9 @@ feedbackForm.addEventListener("input", (e) => {
     if (e.target.name === "email") formData.email = e.target.value.trim();
     if (e.target.name === "message") formData.message = e.target.value.trim();
 
+
     localStorage.setItem(localStorageData, JSON.stringify(formData));
+    
  
  });
 
@@ -32,6 +34,9 @@ feedbackForm.addEventListener("input", (e) => {
     if (parsedData.message !== undefined) {
         feedbackForm.elements.message.value = parsedData.message;
     }
+
+    formData.email = parsedData.email
+    formData.message = parsedData.message
 }
 
 firstStep()
@@ -41,6 +46,8 @@ firstStep()
 
 feedbackForm.addEventListener("submit", (e) => {
 
+    e.preventDefault();
+
     if (feedbackForm.elements.email.value.trim() === "" ||  feedbackForm.elements.message.value.trim() === "") {
               
            return alert("Fill please all fields.")
@@ -48,11 +55,16 @@ feedbackForm.addEventListener("submit", (e) => {
 
 
     console.log(formData)
-    localStorage.removeItem(localStorageData);
+
     formData.email = "";
     formData.message = "";
 
-   
+    localStorage.removeItem(localStorageData);
+    
+    feedbackForm.elements.email.value = "";
+    feedbackForm.elements.message.value = "";
+
+    localStorage.setItem(localStorageData, JSON.stringify(formData));
 
 })
 
